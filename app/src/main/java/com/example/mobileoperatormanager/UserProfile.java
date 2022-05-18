@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.text.InputFilter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,7 +24,7 @@ public class UserProfile extends AppCompatActivity {
         setContentView(R.layout.activity_user_profile);
 
         username = findViewById(R.id.UP_username);
-        phoneNumber= findViewById(R.id.PhoneNb);
+        phoneNumber= findViewById(R.id.PhoneNbr);
         operatorType = findViewById(R.id.OperatorType);
         codeLenght = findViewById(R.id.UP_CodeLenght);
         rechargeCode = findViewById(R.id.RechargeCode);
@@ -34,11 +33,11 @@ public class UserProfile extends AppCompatActivity {
         callRecharge = findViewById(R.id.Call_1);
         callBalance = findViewById(R.id.Call_2);
 
-        // getting the username value from Mainactivity  intent
+        //obtenir la valeur du nom d'utilisateur à partir de l'intention Mainactivity
         String username_value =getIntent().getStringExtra("usernameValue");
         username.setText(username_value);
         //****************************************************************************************************************************
-        //Phone number Listener
+        //Numéro de téléphone Auditeur
         phoneNumber.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -80,7 +79,7 @@ public class UserProfile extends AppCompatActivity {
                     callBalance.setEnabled(true);
                 }
                 else{
-                    //Resetting the Inputs when editing the phone number
+                    //Réinitialisation des entrées lors de la modification du numéro de téléphone
                     operatorType.setTextColor(Color.rgb(255,255,255));
                     rechargeCommand.setTextColor(Color.rgb(0,0,0));
                     rechargeCommand.setBackground(null);
@@ -101,7 +100,7 @@ public class UserProfile extends AppCompatActivity {
             }
         });
         //****************************************************************************************************************************
-        // RechargeCode Listener
+        // Recharger l'écouteur de code
         rechargeCode.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -126,7 +125,7 @@ public class UserProfile extends AppCompatActivity {
             }
         });
         //****************************************************************************************************************************
-        // CallBalance Button  Listener
+        // Écouteur du bouton de recharge d'appel
         callBalance.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -135,7 +134,7 @@ public class UserProfile extends AppCompatActivity {
             }
         });
         //****************************************************************************************************************************
-        // CallRecharge Button Listener
+        // Écouteur du bouton de recharge d'appel
         callRecharge.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -146,7 +145,7 @@ public class UserProfile extends AppCompatActivity {
 
     }
     //****************************************************************************************************************************
-    //Boolean functions to check the Type of Operator
+    //Fonctions booléennes pour vérifier le type d'opérateur
     private Boolean isOrangeNumber(String phonenumber){
         return ( phonenumber.startsWith("3") || phonenumber.startsWith("5") ) && (phoneNumber.length()==8);
     }
@@ -159,7 +158,7 @@ public class UserProfile extends AppCompatActivity {
         return  phonenumber.startsWith("9") && (phoneNumber.length()==8);
     }
     //****************************************************************************************************************************
-    // Formatting the RecharchingCode based on the Operator
+    // Formatage du RecharchingCode en fonction de l'opérateur
     private String formatRechargingCode (String code ,String phone) {
         String cmnd = "";
 

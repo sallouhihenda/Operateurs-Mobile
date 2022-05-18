@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if( password.getText().toString().equals("123456") && login.getText().toString()!=null) {
-                //correct
+                //correcte
                     String username = login.getText().toString();
                     Intent intent = new Intent( MainActivity.this,UserProfile.class);
                     intent.putExtra("usernameValue",username);
                     startActivity(intent);
                 }else
-                    //incorrect
+                    //non correctegit remote add origin https://github.com/sallouhihenda/mobile-operateurs.git
                     Toast.makeText(MainActivity.this,"LOGIN FAILED !!!",Toast.LENGTH_SHORT).show();
             }
 

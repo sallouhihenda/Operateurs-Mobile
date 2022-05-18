@@ -10,12 +10,16 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="300dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:src="@drawable/user1"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/user11"
+        app:layout_constraintBottom_toTopOf="@+id/UP_username"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/user1" />
+        tools:srcCompat="@color/white" />
 
     <TextView
         android:id="@+id/UP_username"
@@ -23,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +129,7 @@
         app:layout_constraintTop_toBottomOf="@+id/OperatorType" />
 
     <EditText
-        android:id="@+id/PhoneNb"
+        android:id="@+id/PhoneNbr"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -161,7 +166,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PhoneNb" />
+        app:layout_constraintTop_toBottomOf="@+id/PhoneNbr" />
 
     <Button
         android:id="@+id/Call_1"
